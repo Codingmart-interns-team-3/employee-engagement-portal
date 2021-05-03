@@ -18,6 +18,8 @@ function App() {
               <Route path='/snake' exact component={Board} />
               <Route path='/brick' exact component={Break} />
               <Route path='/flappy' exact component={Flappy} />
+              <Route path='/tictactoe' exact component={Tictactoe} />
+              <Route path='/rockpaper' exact component={Rockpaper} />
               <Route path='/contactus' exact component={Contactus} />
               <Route path='*'  component={()=><h2>Not Found</h2>} />
         </Switch>
@@ -28,9 +30,12 @@ function App() {
   );
 }
 
-// const Snake=()=>{
-//   return(<h2 className='text-center'>Snake Game</h2>)
-// }
+const Tictactoe=()=>{
+  return(<h2 className='text-center'>Tictactoe Game</h2>)
+}
+const Rockpaper=()=>{
+  return(<h2 className='text-center'>Rockpaper Game</h2>)
+}
 const Flappy=()=>{
   return(<h2 className='text-center'>Flappy Game</h2>)
 }

@@ -205,8 +205,8 @@ const Board = () => {
 
   return (
     <>
-    <div className='snakeHeader'>
-    <h4>name</h4>
+    <div className='snakeHeader text-uppercase'>
+    <h4>Name</h4>
     <h4>Score: {score}</h4>
     </div>
       <div className="board">

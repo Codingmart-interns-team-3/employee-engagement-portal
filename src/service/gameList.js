@@ -29,7 +29,7 @@ const game = [
         id:2,
         name:'Breakout',
         url:'/brick',
-        logo:'https://firebasestorage.googleapis.com/v0/b/fir-imagestore-5410f.appspot.com/o/logos%2Fbrakout.jpeg?alt=media&token=58411bbd-5094-404c-8ecb-54925b8dffea',
+        logo:'https://mancunion.com/wp-content/uploads/sites/6/break-out.jpg',
         players:[
             {
                 id:1,
@@ -80,7 +80,7 @@ const game = [
     {
         id:4,
         name:'TICTACTOE',
-        url:'/snake',
+        url:'/tictactoe',
         logo:'https://firebasestorage.googleapis.com/v0/b/fir-imagestore-5410f.appspot.com/o/logos%2Ftictactoe.jpeg?alt=media&token=12c08de1-194e-45dd-8f7d-1b137f4ed694',
         players:[
             {
@@ -106,7 +106,7 @@ const game = [
     {
         id:5,
         name:'rock paper scissor',
-        url:'/snake',
+        url:'/rockpaper',
         logo:'https://firebasestorage.googleapis.com/v0/b/fir-imagestore-5410f.appspot.com/o/logos%2Frockpapsicss.jpeg?alt=media&token=567f0549-f9eb-4786-9dab-72a139ed7b11',
         players:[
             {

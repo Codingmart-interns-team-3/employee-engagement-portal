@@ -14,7 +14,7 @@ const GamesSection = () => {
             <div className='d-flex content justify-content-around'>
                 {
                     games.map((e)=>{
-                        return <GameCard key={e.id} onClick={setFocusedGame} data={e} />
+                        return <GameCard key={e.id} focused={e.id===focusedGame.id} onClick={setFocusedGame} data={e} />
                     })
                 }
             </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import './gameCard.scss';
 
-const GameCard = ({ data, onClick }) => {
+const GameCard = ({ data, focused,onClick }) => {
     let score = 200;
     return (
-        <div className="gameCard">
+        <div className="gameCard" style={{backgroundColor:(focused)?'#131222':'#679973'}}>
             <div className='cards' onClick={()=>onClick(data)}>
                 <img  draggable={false} src={data.logo} className='gameLogo' alt={data.name} />
                 <div className='text-center'>
