@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Home from './views/Home/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Board from './views/Board/Board';
+import Break from './components/games/Breakout/Break';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='body'>
+    <Router>
+      <Header />
+      <div className='mainBody'>
+          <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/snake' exact component={Board} />
+              <Route path='/brick' exact component={Break} />
+              <Route path='/flappy' exact component={Flappy} />
+              <Route path='/contactus' exact component={Contactus} />
+              <Route path='*'  component={()=><h2>Not Found</h2>} />
+        </Switch>
+      </div>
+        <Footer />
+    </Router>
     </div>
   );
 }
+
+// const Snake=()=>{
+//   return(<h2 className='text-center'>Snake Game</h2>)
+// }
+const Flappy=()=>{
+  return(<h2 className='text-center'>Flappy Game</h2>)
+}
+
+const Contactus=()=>{
+  return(<h2 className='text-center'>ContactUs page</h2>)
+}
+
 
 export default App;
