@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
   margin: 0;
@@ -39,4 +40,8 @@ canvas{
 }
 .link{
   text-decoration: none!important;
+}
+
+.cursorDefault{
+  cursor: default;
 }

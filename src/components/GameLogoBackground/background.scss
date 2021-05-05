@@ -15,5 +15,9 @@
         position: absolute;
         top: 50%;
         margin: auto;
+        &:hover{
+            transform: scale(1.2);
+            transition: all .5s;
+        }
     }
 }

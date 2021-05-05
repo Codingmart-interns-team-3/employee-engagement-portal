@@ -1,6 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Freckle+Face&family=Indie+Flower&display=swap');
-$borderCard: #FFB200;
+
+$gameCardBorder: #FFB200;
+$playerCardBorder: #8ad157;
+
+$gameCardBorderRadius: 15px 50px 15px;
+$playerCardBorderRadius: 100px 50px 100px;
+
+
 .gameCard, .playerCard{
     color: rgb(255, 255, 255);
     margin: 10px 0;
@@ -8,9 +15,9 @@ $borderCard: #FFB200;
     display: flex;
     flex-direction: column;
 // Card Border styles
-    border-left: 5px solid $borderCard;
-    border-right: 5px solid $borderCard;
-    border-radius: 15px 50px 15px;
+    border-left: 5px solid $gameCardBorder;
+    border-right: 5px solid $gameCardBorder;
+    border-radius: $gameCardBorderRadius;
     background-color: #679973;
     &:hover{
         cursor: pointer;
@@ -41,7 +48,18 @@ $borderCard: #FFB200;
     }
 }
 .playerCard{
+    // Card Border styles
+    border-left: 5px solid $playerCardBorder;
+    border-right: 5px solid $playerCardBorder;
+    border-radius: $playerCardBorderRadius;
     &:hover{
         cursor: default;
+        transform: scale(1.1);
+        transition: all .5s;
     }
+}
+.focused{
+    background-color: #0ab532;
+    transform: scale(1.1);
+    transition: all .5s;
 }
