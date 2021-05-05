@@ -28,7 +28,7 @@ var res = {
 };
 function Gamestoplay(props) {
   return (
-    <div className="mt-3 pt-3 ml-4" id="gamestoplay">
+    <div className="my-5 pt-3 ml-4" id="gamestoplay">
       <h4 className="myfont">Games</h4>
       <br></br>
       <OwlCarousel

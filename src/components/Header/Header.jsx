@@ -32,7 +32,7 @@ function Header() {
         </button>
 
         <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto farkonium mr-auto navb-font">
+          <ul class="navbar-nav text-uppercase ml-auto farkonium mr-auto navb-font">
             <li class="nav-item  mr-5">
               <Link
                 style={{
@@ -42,7 +42,7 @@ function Header() {
                 class="nav-link navb-font"
                 to='/'
               >
-                HOME <span class="sr-only">(current)</span>
+                Home <span class="sr-only">(current)</span>
               </Link>
             </li>
             <li class="nav-item mr-5">
@@ -54,7 +54,19 @@ function Header() {
                 class="nav-link navb-font"
                 to="/games"
               >
-                GAMES
+                Games
+              </Link>
+            </li>
+            <li class="nav-item  mr-5">
+              <Link
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                }}
+                class="nav-link navb-font"
+                to='/'
+              >
+                Leaderboard
               </Link>
             </li>
             <li class="nav-item mr-5">
@@ -66,7 +78,7 @@ function Header() {
                 class="nav-link navb-font"
                 to="/contactus"
               >
-                CONTACTUS
+                Contactus
               </Link>
             </li>
             <li class="nav-item mr-5">
@@ -78,7 +90,7 @@ function Header() {
                 class="nav-link navb-font"
                 href="#"
               >
-                LOG-OUT
+                Log-out
               </a>
             </li>
           </ul>
