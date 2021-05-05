@@ -5,10 +5,13 @@ import game from '../../service/gameList';
 
 const Footer = () => {
     return (
-        <div className='Footer fmonoton text-center m-0'>
+        <div className='Footer cursorDefault fmonoton text-center m-0'>
             <div className="footerContent align-items-center forigSurfer d-flex flex-wrap justify-content-around">
                 <div className='fntText ffingerpaint'>
-                    Employee Engagemnet portal
+                <Link className='link' to='/'>
+                    <img src='https://i.stack.imgur.com/QqDfb.gif' alt='git' width='100' height='50' />
+                    MG portal
+                </Link>
                 </div>
                 <div className='fntText'>
                     <Link className='link' to='/contactus'>contact us</Link>
@@ -40,20 +43,22 @@ const Footer = () => {
                         </svg>
                     </a>
                 </div>
-                <div className='fntText my-3'>
+                <div className='fntText my-3 w-100'>
                         <p className='text-success m-0'>Play</p>
-                        <div className='d-flex flex-wrap justify-content-center'>
-                            {
-                                game.map((e)=>{
-                                    return <Link className='link text-danger' key={e.id} to={e.url} >{e.name}</Link>
-                                })
-                            }
-                        </div>
+                        <marquee behavior='slide' direction='left'>
+                            <div className='d-flex flex-wrap justify-content-center'>
+                                {
+                                    game.map((e)=>{
+                                        return <Link className='link text-danger' key={e.id} to={e.url} >{e.name}</Link>
+                                    })
+                                }
+                            </div>
+                        </marquee>
                 </div>
             </div>
             <hr />
             <div className='fntText farkonium'>
-            &#x24B8;Employee portal team
+            &#x24B8;MG portal team
             </div>
         </div>
     )

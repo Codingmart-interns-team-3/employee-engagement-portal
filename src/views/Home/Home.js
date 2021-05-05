@@ -1,16 +1,14 @@
 import React from 'react';
-import GamesSection from '../../components/GamesSection/GamesSection';
-import './home.scss';
+import Homepg from '../../components/LandingPage/home';
+import Jackpot from '../../components/LandingPage/jackpo';
+import Gamestoplay from '../../components/LandingPage/ongames';
 
 const Home = () => {
     return (
-        <div className='homePage'>
-            <div className='main text-center'>
-                <div>
-                    <GamesSection />
-                </div>
-            </div>
-
+        <div>
+            <Homepg />
+            <Jackpot />
+            <Gamestoplay />
         </div>
     )
 }

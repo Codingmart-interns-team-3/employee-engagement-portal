@@ -52,7 +52,7 @@ const getStartingSnakeLLValue = board => {
   };
 };
 
-const Board = () => {
+const Snake = () => {
   const [score, setScore] = useState(0);
   const [board, setBoard] = useState(createBoard(BOARD_SIZE));
   const [snake, setSnake] = useState(
@@ -345,4 +345,4 @@ const getCellClassName = (
   return className;
 };
 
-export default Board;
+export default Snake;
