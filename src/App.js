@@ -9,9 +9,10 @@ import Snake from './views/Board/Board';
 import Break from './components/games/Breakout/Break';
 import Tictactoe from './components/Tictactoe/components/Tictactoe';
 import Home from './views/Home/Home';
+import Leaderboard from './components/Leaderboard/Leaderboard';
 
 function App() {
-  let name = 'Ragavan';
+  let name = 'sample';
   return (
     <div className='body'>
     <Router>
@@ -36,9 +37,9 @@ function App() {
   );
 }
 
-const Leaderboard=()=>{
-  return(<h2 className='text-center'>Leaderboard</h2>)
-}
+// const Leaderboard=()=>{
+//   return(<h2 className='text-center'>Leaderboard</h2>)
+// }
 const Rockpaper=()=>{
   return(<h2 className='text-center'>Rockpaper Game</h2>)
 }
