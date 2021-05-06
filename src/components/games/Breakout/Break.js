@@ -1,10 +1,10 @@
 import React from 'react';
 import Board from './Board';
 
-export default function Break(){
+export default function Break({user}){
     return (
         <div className='farkonium'>
-            <Board />  
+            <Board user={user} />  
         </div>
     )
 }

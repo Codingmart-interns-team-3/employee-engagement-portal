@@ -10,14 +10,16 @@ import PaddleHit from './Util/PaddleHit';
 import PlayerStats from './PlayerStats';
 import AllBroken from "./Util/AllBroke";
 import ResetBall from "./Util/ResetBall";
-export default function Board() {
+
+
+export default function Board({user}) {
   const canvasRef = useRef(null);
   let bricks = [];
   
   let { ballObj, paddleProps, brickObj } = data;
 
   let player = {
-    name: "Ragavan",
+    name: user,
     lives: 5,
     score: 0,
     level: 1,

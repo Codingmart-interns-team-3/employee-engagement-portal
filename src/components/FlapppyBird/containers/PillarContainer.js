@@ -147,7 +147,7 @@ export default class PillarContainer extends React.Component {
 		//   });
 		// }
 		return(
-			<div className='position-relative'>
+			<div className='position-absolute'>
 				<Pillars pillars={this.state.pillars} />
 			</div>
 		);

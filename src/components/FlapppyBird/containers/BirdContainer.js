@@ -45,7 +45,7 @@ export default class BirdContainer extends React.Component {
 					{
 						top: "-=50px" // Subtract from the top on the click of spacebar to elevate the bird
 					},
-					100, 		// Perform the animation every 120ms
+					120, 		// Perform the animation every 120ms
 					"linear", 	// For smooth transition of animation
 					() => {
 						// After animation is completed
