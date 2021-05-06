@@ -13,14 +13,14 @@ function Header() {
               <img
                 className="mainlogo "
                 alt=""
-                width="60"
-                height="50"
+                width="50"
+                height="40"
                 src={mg}
               />
           </div>
         </Link>
         <button
-          className="navbar-toggler btn-danger btn bg-danger"
+          className="navbar-toggler btn-info btn bg-danger"
           type="button"
           data-toggle="collapse"
           data-target="#navbarTogglerDemo02"
@@ -31,15 +31,15 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarTogglerDemo02">
-          <ul class="navbar-nav text-uppercase ml-auto farkonium mr-auto navb-font">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav text-uppercase mx-auto farkonium mr-auto navb-font">
             <li class="nav-item  mr-5">
               <Link
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link navb-font"
+                class="nav-link text-center navb-font"
                 to='/'
               >
                 Home <span class="sr-only">(current)</span>
@@ -51,7 +51,7 @@ function Header() {
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link navb-font"
+                class="nav-link text-center navb-font"
                 to="/games"
               >
                 Games
@@ -63,8 +63,8 @@ function Header() {
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link navb-font"
-                to='/'
+                class="nav-link text-center navb-font"
+                to='/leaderboard'
               >
                 Leaderboard
               </Link>
@@ -75,7 +75,7 @@ function Header() {
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link navb-font"
+                class="nav-link text-center navb-font"
                 to="/contactus"
               >
                 Contactus
@@ -87,7 +87,7 @@ function Header() {
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link navb-font"
+                class="nav-link text-center navb-font"
                 href="#"
               >
                 Log-out

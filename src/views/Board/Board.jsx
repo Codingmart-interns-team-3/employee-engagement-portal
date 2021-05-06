@@ -52,7 +52,7 @@ const getStartingSnakeLLValue = board => {
   };
 };
 
-const Snake = () => {
+const Snake = ({ user }) => {
   const [score, setScore] = useState(0);
   const [board, setBoard] = useState(createBoard(BOARD_SIZE));
   const [snake, setSnake] = useState(
@@ -196,6 +196,8 @@ const Snake = () => {
 
   const handleGameOver = () => {
     setScore(0);
+    // ALter these to restart snake game
+    alert('Game Over')
     const snakeLLStartingValue = getStartingSnakeLLValue(board);
     setSnake(new LinkedList(snakeLLStartingValue));
     setFoodCell(snakeLLStartingValue.cell + 5);
@@ -206,7 +208,7 @@ const Snake = () => {
   return (
     <>
     <div className='snakeHeader text-uppercase'>
-    <h4>Name</h4>
+    <h4>Name: {user}</h4>
     <h4>Score: {score}</h4>
     </div>
       <div className="board">
