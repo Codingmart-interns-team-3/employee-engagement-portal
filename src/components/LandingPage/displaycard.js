@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function Displaycard(props) {
   return (
     <div className="col box-effect flip-card">
@@ -7,12 +8,13 @@ function Displaycard(props) {
             <img
               className="game-si"
               src={props.src}
-              style={{ height: "250px", borderRadius: "3.5%" }}
-              alt=".."
+              style={{ height: "250px", borderRadius: "10%" }}
+              alt="gmaeImage"
             />
         </div>
         <div className="flip-card-back">
           <p>{props.description}</p>
+          <Link to={props.location} className='btn btn-outline-danger'>PLay</Link>
         </div>
       </div>
     </div>

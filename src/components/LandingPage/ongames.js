@@ -3,12 +3,15 @@ import Displaycard from "./displaycard";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-// import "./styles.css";
+
 import snake from "../../assets/images/snake.png";
 import tictactoe from "../../assets/images/tictactoe.jpeg";
 import breakout from "../../assets/images/breakout.jpg";
 import flappy from "../../assets/images/flappy.jpg";
 import rock from "../../assets/images/rock.jpg";
+
+import game from '../../service/gameList';
+
 var res = {
   0: {
     items: 1
@@ -27,8 +30,9 @@ var res = {
   }
 };
 function Gamestoplay(props) {
+  console.log(game);
   return (
-    <div className="mt-3 pt-3 ml-4" id="gamestoplay">
+    <div className="my-5 pt-3 ml-4" id="gamestoplay">
       <h4 className="myfont">Games</h4>
       <br></br>
       <OwlCarousel
@@ -47,31 +51,15 @@ function Gamestoplay(props) {
         ]}
         responsive={res}
       >
-        <Displaycard
-          src={snake}
-          description="The game continues until the snake 'dies'. A snake dies by either (1) running into the edge of the board, or (2) by running into its own tail. The final score is based on the number of apples eaten by the snake."
-          location=""
-        />
-        <Displaycard
-          src={breakout}
-          description="A layer of bricks lines the top third of the screen and the goal is to destroy them all by repeatedly bouncing a ball off a paddle into them."
-          location=""
-        />
-        <Displaycard
-          src={tictactoe}
-          description="A game in which two players alternately put Xs and Os in compartments of a figure formed by two vertical lines crossing two horizontal lines and each tries to get a row of three Xs or three Os before the opponent does."
-          location=""
-        />
-        <Displaycard
-          src={flappy}
-          description="A side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them."
-          location=""
-        />
-        <Displaycard
-          src={rock}
-          description="A rock beats scissors, scissors beat paper by cutting it, and paper beats rock by covering it"
-          location=""
-        />
+        {
+          game.map((e)=>{
+          return (
+          <Displaycard 
+            src={e.logo}
+            description={e.description}
+            location={e.url}
+          />)})
+        }
       </OwlCarousel>
     </div>
   );
