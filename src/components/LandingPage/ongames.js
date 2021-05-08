@@ -3,13 +3,6 @@ import Displaycard from "./displaycard";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-
-import snake from "../../assets/images/snake.png";
-import tictactoe from "../../assets/images/tictactoe.jpeg";
-import breakout from "../../assets/images/breakout.jpg";
-import flappy from "../../assets/images/flappy.jpg";
-import rock from "../../assets/images/rock.jpg";
-
 import game from '../../service/gameList';
 
 var res = {
@@ -30,7 +23,6 @@ var res = {
   }
 };
 function Gamestoplay(props) {
-  console.log(game);
   return (
     <div className="my-5 pt-3 ml-4" id="gamestoplay">
       <h4 className="myfont">Games</h4>
@@ -55,6 +47,7 @@ function Gamestoplay(props) {
           game.map((e)=>{
           return (
           <Displaycard 
+            key={e.id}
             src={e.logo}
             description={e.description}
             location={e.url}

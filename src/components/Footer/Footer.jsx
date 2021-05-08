@@ -16,6 +16,9 @@ const Footer = () => {
                 <div className='fntText'>
                     <Link className='link' to='/contactus'>contact us</Link>
                 </div>
+                <div className='fntText'>
+                    <Link className='link' to='/leaderboard'>Leaderboard</Link>
+                </div>
                 <div className='fntText socialmedia'>
                     <a className='link'  href='https://github.com/Codingmart-interns-team-3/employee-engagement-portal' target='_blank' rel="noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">

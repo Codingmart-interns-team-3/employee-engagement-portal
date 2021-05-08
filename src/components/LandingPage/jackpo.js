@@ -5,18 +5,18 @@ import bonus from "../../assets/images/bonus.png";
 
 function Jackpot() {
   return (
-    <div class="mx-3 mx-md-5 mx-lg-5 mx-xl-5  my-5">
-      <div class="card mb-3 con-back py-5 px-0 px-md-5 px-lg-5 px-xl-5 jackpot-border2">
-        <div class="row h-100 no-gutters ">
-          <div class="col-sm-12 col-md-4 col-lg-3 col-xl-4 ">
-            <img src={jack} width="100%" />
+    <div className="mx-3 mx-md-5 mx-lg-5 mx-xl-5  my-5">
+      <div className="card mb-3 con-back py-5 px-0 px-md-5 px-lg-5 px-xl-5 jackpot-border2">
+        <div className="row h-100 no-gutters ">
+          <div className="col-sm-12 col-md-4 col-lg-3 col-xl-4 ">
+            <img src={jack} width="100%" alt='jackpot' />
           </div>
-          <div class="col-md-8 ">
-            <div class="card-body ">
+          <div className="col-md-8 ">
+            <div className="card-body ">
               {/* first jumbotron */}
-              <div class="jumbotron jackpot-border jumbo-test pb-0 pt-3 wow fadeIn ">
+              <div className="jumbotron jackpot-border jumbo-test pb-0 pt-3 wow fadeIn ">
                 <div className="text-center">
-                  <img src={live} style={{ width: "10%" }} class="float-left" />
+                  <img src={live} style={{ width: "10%" }} alt='live' className="float-left" />
                 </div>
                 <div className="row h-100 mx-auto jumbotron-font">
                   <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -39,7 +39,8 @@ function Jackpot() {
                   <img
                     src={bonus}
                     style={{ width: "10%" }}
-                    class="float-left"
+                    className="float-left"
+                    alt='bonus'
                   />
                 </div>
                 <div className="row h-100 mx-auto jumbotron-font">

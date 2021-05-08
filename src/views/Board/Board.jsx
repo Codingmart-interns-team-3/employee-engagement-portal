@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { useSelector } from 'react-redux';
 import {
   randomIntFromInterval,
   reverseLinkedList,
@@ -52,7 +53,8 @@ const getStartingSnakeLLValue = board => {
   };
 };
 
-const Snake = ({ user }) => {
+const Snake = () => {
+  const username = useSelector(state => state.userdata?.username)
   const [score, setScore] = useState(0);
   const [board, setBoard] = useState(createBoard(BOARD_SIZE));
   const [snake, setSnake] = useState(
@@ -208,7 +210,7 @@ const Snake = ({ user }) => {
   return (
     <>
     <div className='snakeHeader text-uppercase'>
-    <h4>Name: {user}</h4>
+    <h4>Name: {username}</h4>
     <h4>Score: {score}</h4>
     </div>
       <div className="board">

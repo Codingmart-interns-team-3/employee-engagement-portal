@@ -1,9 +1,9 @@
 .leaderboard {
-  background: radial-gradient(
+  /* background: radial-gradient(
     ellipse farthest-corner at center top,
     #d5057f 0%,
     #1e1d32 100%
-  );
+  ); */
   color: #fff;
   height: 100vh;
 }
@@ -44,6 +44,7 @@
   padding: 20px 0px;
   text-transform: uppercase;
   text-align: center;
+  margin: 0;
 }
 
 .leaderboard-body {
