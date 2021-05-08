@@ -1,7 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import mg from "../../assets/images/mg-logo.jpg";
 function Header() {
+  let history = useHistory();
+  const user = useSelector(state => state);
+  const dispatch = useDispatch();
+  console.log(user);
+  // useEffect(() => {
+  //   return () => {
+  //     setUsername(JSON.parse(localStorage.getItem('auth'))?.username);
+  //   }
+  // });
   return (
     <div className="sticky-top">
       <nav
@@ -31,68 +41,118 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav text-uppercase mx-auto farkonium mr-auto navb-font">
-            <li class="nav-item  mr-5">
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul className="navbar-nav text-uppercase mx-auto farkonium mr-auto navb-font">
+            <li className="nav-item  mr-5">
               <Link
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link text-center navb-font"
+                className="nav-link text-center navb-font"
                 to='/'
               >
-                Home <span class="sr-only">(current)</span>
+                Home <span className="sr-only">(current)</span>
               </Link>
             </li>
-            <li class="nav-item mr-5">
+            <li className="nav-item mr-5">
               <Link
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link text-center navb-font"
+                className="nav-link text-center navb-font"
                 to="/games"
               >
                 Games
               </Link>
             </li>
-            <li class="nav-item  mr-5">
+            <li className="nav-item  mr-5">
               <Link
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link text-center navb-font"
+                className="nav-link text-center navb-font"
                 to='/leaderboard'
               >
                 Leaderboard
               </Link>
             </li>
-            <li class="nav-item mr-5">
+            <li className="nav-item mr-5">
               <Link
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link text-center navb-font"
+                className="nav-link text-center navb-font"
                 to="/contactus"
               >
                 Contactus
               </Link>
             </li>
-            <li class="nav-item mr-5">
-              <a
+                {
+                  user.userdata?.username?
+                  <div>
+                    <li className="nav-item  mr-5">
+                      <span
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                        }}
+                        className="nav-link pointer text-center navb-font"
+                        // to='/login'
+                        onClick={()=>{
+                          localStorage.clear();
+                          dispatch({ type: 'increment' });
+                          history.push('/login');
+                        }}
+                      >
+                        Log-out
+                      </span>
+                    </li>
+                  </div>:
+                  <>
+                    <li className="nav-item mr-5">
+                      <Link
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                        }}
+                        className="nav-link text-center navb-font"
+                        to='/login'
+                      >
+                        login
+                      </Link>
+                    </li>
+                    <li className="nav-item  mr-5">
+                      <Link
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                        }}
+                        className="nav-link text-center navb-font"
+                        to='/register'
+                      >
+                        Register
+                      </Link>
+                    </li>
+                  </>
+                }
+
+            {/* <li className="nav-item mr-5">
+              <Link
                 style={{
                   color: "white",
                   textDecoration: "none",
                 }}
-                class="nav-link text-center navb-font"
-                href="#"
+                className="nav-link text-center navb-font"
+                to='/login'
+                onClick={()=>{localStorage.removeItem('auth')}}
               >
                 Log-out
-              </a>
-            </li>
+              </Link>
+            </li> */}
           </ul>
         </div>
       </nav>

@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import {calculateWinner } from "../helper";
 import Board from "./Board";
 import '../ticTacToe.scss';
+import { useSelector } from "react-redux";
 
-const Tictactoe = ({user}) => {
+const Tictactoe = () => {
+    const user = useSelector(state => state.userdata?.username)
     const[history, setHistory] =useState([Array(9).fill(null)]);
     const[stepNumber, setStepNumber] = useState(0);
     const[xIsNext, setXisNext] = useState(true);

@@ -5,7 +5,7 @@ import Gamestoplay from '../../components/LandingPage/ongames';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bd-bg'>
             <Homepg />
             <Jackpot />
             <Gamestoplay />

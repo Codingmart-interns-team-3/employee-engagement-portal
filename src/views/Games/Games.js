@@ -4,13 +4,10 @@ import './home.scss';
 
 const Games = () => {
     return (
-        <div className='homePage'>
+        <div className='gamePage'>
             <div className='main text-center'>
-                <div>
                     <GamesSection />
-                </div>
             </div>
-
         </div>
     )
 }
