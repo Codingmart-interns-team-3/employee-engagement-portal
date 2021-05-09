@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
-import Play from "./components/Play";
-import Game from "./components/Game";
-import Footer from "./components/Footer";
-import { Switch, Route } from "react-router-dom";
+// import Header from "./components/Header";
+// import Play from "./components/Play";
+// import Game from "./components/Game";
+// import Footer from "./components/Footer";
+// import { Switch, Route } from "react-router-dom";
 
-function App() {
-  const [myChoice, setMyChoice] = useState("");
-  const [score, setScore] = useState(0);
+function Rockpaper() {
+  // const [myChoice, setMyChoice] = useState("");
+  // const [score, setScore] = useState(0);
 
   return (
     <>
-      <div className="container">
+      {/* <div className="container">
         <Header score={score} />
         <Switch>
           <Route exact path="/rockpaper">
@@ -22,9 +22,13 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <Footer />
+      <Footer /> */}
+    <div className='w-100 h-100' >
+      <iframe src="https://rock-paper-mg.netlify.app/" width="100%"  title="description">
+      </iframe>
+    </div>
     </>
   );
 }
 
-export default App;
+export default Rockpaper;

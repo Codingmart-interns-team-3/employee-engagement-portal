@@ -17,13 +17,14 @@ const GameCard = ({ data, focused,onClick }) => {
 }
 
 const PlayerCard = ({data})=>{
+    console.log(data);
     return(
         <div className="playerCard bg-secondary">
             <div className='cards'>
-                <img draggable={false} src={data.profile} className='gameLogo' alt={data.name} />
+                <img draggable={false} src="https://s3-ap-northeast-1.amazonaws.com/peatix-files/user/5562732/240administrator-male.png" className='gameLogo' alt={data.name} />
                 <div className='text-center'>
                     <p className='name'>{data.name}</p>
-                    <p className='score'>{data.bestScore}</p>
+                    <p className='score'>{data.score}</p>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ import App from "../components/App";
 import '../css/main.css';
 
 import $ from "jquery";
+import axios from "axios";
 
 class FlappyBird extends React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class FlappyBird extends React.Component {
         // is actually called.
         this.handleGameOver = this.handleGameOver.bind(this);
         this.handleScore = this.handleScore.bind(this);
+        this.uploadScore = this.uploadScore.bind(this);
     }
 
     componentDidMount() {
@@ -32,9 +34,22 @@ class FlappyBird extends React.Component {
     }
 
     handleGameOver(isGameOver) {
+        this.state.score && this.uploadScore(this.state.score)
         this.setState({
             isGameOver
         });
+
+    }
+
+   uploadScore = async(score)=>{
+      await axios.post('https://employee-portal-leaderboard.herokuapp.com/leaderboard/',{
+          'name': this.props.user.username,
+          'score': score,
+          'department': this.props.user.designation,
+          'game': 'flappy bird',
+        }).then((res)=>{
+          console.log(res);
+        })
     }
 
     handleScore(score) {
@@ -54,7 +69,7 @@ class FlappyBird extends React.Component {
             <App isGameOver={isGameOver}
                 isGameStarted={isGameStarted}
                 score={score}
-                user={this.props.user}
+                user={this.props.user.username}
                 handleGameOver={this.handleGameOver}
                 handleScore={this.handleScore} />;
         </div>
