@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -54,7 +55,8 @@ const getStartingSnakeLLValue = board => {
 };
 
 const Snake = () => {
-  const username = useSelector(state => state.userdata?.username)
+  const userData = useSelector(state => state?.userdata);
+  // const username = useSelector(state => state.userdata?.username)
   const [score, setScore] = useState(0);
   const [board, setBoard] = useState(createBoard(BOARD_SIZE));
   const [snake, setSnake] = useState(
@@ -199,7 +201,8 @@ const Snake = () => {
   const handleGameOver = () => {
     setScore(0);
     // ALter these to restart snake game
-    alert('Game Over')
+    alert('Game Over');
+    uploadScore();
     const snakeLLStartingValue = getStartingSnakeLLValue(board);
     setSnake(new LinkedList(snakeLLStartingValue));
     setFoodCell(snakeLLStartingValue.cell + 5);
@@ -207,10 +210,24 @@ const Snake = () => {
     setDirection(Direction.RIGHT);
   };
 
+  const uploadScore = async()=>{
+      console.log(score);
+      console.log(userData.username);
+      await axios.post('https://employee-portal-leaderboard.herokuapp.com/leaderboard/',{
+        'name': userData.username,
+        'score': score,
+        'department': userData.designation,
+        'game': 'snake',
+        }).then((res)=>{
+          console.log(res);
+        })
+  }
+
+
   return (
     <>
     <div className='snakeHeader text-uppercase'>
-    <h4>Name: {username}</h4>
+    <h4>Name: {userData?.username}</h4>
     <h4>Score: {score}</h4>
     </div>
       <div className="board">

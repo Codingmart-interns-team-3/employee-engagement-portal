@@ -10,9 +10,13 @@ import PaddleHit from './Util/PaddleHit';
 import PlayerStats from './PlayerStats';
 import AllBroken from "./Util/AllBroke";
 import ResetBall from "./Util/ResetBall";
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+import Snake from '../../../views/Board/Snake';
 
 
 export default function Board({user}) {
+  const userData = useSelector(state => state?.userdata);
   const canvasRef = useRef(null);
   let bricks = [];
   
@@ -53,7 +57,9 @@ export default function Board({user}) {
       AllBroken(bricks, player, canvas, ballObj);
 
       if (player.lives === 0) {
-        alert("Game Over! Press ok to restart");
+        alert(`Game Over! Press ok to restart`);
+
+        uploadScore(player.score);
 
         player.lives = 5;
         player.level = 1;
@@ -92,6 +98,17 @@ export default function Board({user}) {
   }
     render();
   }, []);
+
+  const uploadScore = async(score)=>{
+      await axios.post('https://employee-portal-leaderboard.herokuapp.com/leaderboard/',{
+          'name': userData.username,
+          'score': score,
+          'department': userData.designation,
+          'game': 'breakout',
+        }).then((res)=>{
+          console.log(res);
+        })
+  }
 
   return (
     <div style={{ textAlign: "center" }}>

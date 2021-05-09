@@ -1,7 +1,7 @@
 const game = [
     {
         id:1,
-        name:'Breakout',
+        name:'breakout',
         url:'/brick',
         description:'A layer of bricks lines the top third of the screen and the goal is to destroy them all by repeatedly bouncing a ball off a paddle into them.',
         logo:'https://mancunion.com/wp-content/uploads/sites/6/break-out.jpg',
@@ -28,7 +28,7 @@ const game = [
     },
     {
         id:2,
-        name:'Snake',
+        name:'snake',
         url:'/snake',
         description:'The game continues until the snake dies. A snake dies by either (1) running into the edge of the board, or (2) by running into its own tail. The final score is based on the number of apples eaten by the snake.',
         logo:'https://firebasestorage.googleapis.com/v0/b/fir-imagestore-5410f.appspot.com/o/logos%2Fsnake.jpeg?alt=media&token=f233d34f-d30c-43ee-9d08-951c4b1e5a31',
@@ -55,7 +55,7 @@ const game = [
     },
     {
         id:3,
-        name:'Flappy bird',
+        name:'flappy bird',
         url:'/flappy',
         description:'A side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.',
         logo:'https://is4-ssl.mzstatic.com/image/thumb/Purple71/v4/d5/b0/76/d5b0769d-85a4-a43f-fa7d-80f6fcb2fda7/source/512x512bb.jpg',

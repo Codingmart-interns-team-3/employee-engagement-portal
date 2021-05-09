@@ -14,7 +14,8 @@ class Register extends Component {
       designation:"",
       password: "",
       confirmpassword: "",
-      errors:{}
+      errors:{},
+      response: ''
     };
     this.changeFullName=this.changeFullName.bind(this);
     this.changeUserName=this.changeUserName.bind(this);
@@ -72,7 +73,10 @@ onSubmit(event){
             setTimeout(this.props.history.push('/login'),10000);
         })
         .catch(err=>{
-            toast.info(err.response.data);
+          this.setState({
+            response: err?.response?.data,
+          });
+            // toast.info(err.response.data);
         })
     }
 
@@ -128,6 +132,9 @@ validateForm(){
       <div >
         <form onSubmit={this.onSubmit} className="slide-in-fwd-bottom ">
           <h3>Register</h3>
+          {
+            this.state.response && <h3>{this.state.response}</h3>
+          }
           <div className="form-group">
             <label>Full Name</label>
             <input

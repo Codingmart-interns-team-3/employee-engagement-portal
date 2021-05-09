@@ -12,6 +12,7 @@ export class Login extends Component {
       email: "",
       password: "",
       errors: {},
+      response: ''
     };
 
     this.changeEmail = this.changeEmail.bind(this);
@@ -22,11 +23,13 @@ export class Login extends Component {
   changeEmail(event) {
     this.setState({
       email: event.target.value,
+      response: '',
     });
   }
   changePassword(event) {
     this.setState({
       password: event.target.value,
+      response: '',
     });
   }
   onSubmit(event){
@@ -44,6 +47,10 @@ export class Login extends Component {
             this.props.history.push('/');
         })
         .catch(err=>{
+          this.setState({
+            response: err?.response?.data,
+          });
+            console.log(err.response);
             toast.info(err.response);
         })
     }
@@ -75,6 +82,9 @@ export class Login extends Component {
       <div className="swing-in-top-fwd  text-danger">
         <form onSubmit={this.onSubmit}>
           <h3 className='h3 font-weight-bold'>Login</h3>
+          {
+            this.state.response && <h3>{this.state.response}</h3>
+          }
           <div className="form-group">
             <div className="form-group font-weight-bold">
               <label>Email </label>
