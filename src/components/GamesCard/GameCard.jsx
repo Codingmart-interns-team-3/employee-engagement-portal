@@ -1,15 +1,14 @@
 import React from 'react';
 import './gameCard.scss';
 
-const GameCard = ({ data, focused,onClick }) => {
-    let score = 200;
+const GameCard = ({ data, focused,onClick, topPlayer }) => {
     return (
         <div className={`gameCard ${focused?'focused':''}`}>
             <div className='cards' onClick={()=>onClick(data)}>
                 <img  draggable={false} src={data.logo} className='gameLogo' alt={data.name} />
                 <div className='text-center'>
                     <p className='name'>{data.name}</p>
-                    <p className='score'>Best Score : {score}</p>
+                    <p className='score'>Top player from : {topPlayer?.department || 'Null'}</p>
                 </div>
             </div>
         </div>
@@ -17,7 +16,6 @@ const GameCard = ({ data, focused,onClick }) => {
 }
 
 const PlayerCard = ({data})=>{
-    console.log(data);
     return(
         <div className="playerCard bg-secondary">
             <div className='cards'>

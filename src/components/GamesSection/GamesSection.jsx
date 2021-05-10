@@ -13,7 +13,7 @@ const GamesSection = () => {
       fetch("https://employee-portal-leaderboard.herokuapp.com/leaderboard/")
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
+        //   console.log(res);
           setLeaderboardData(res);
           setLoading(false);
         })
@@ -29,7 +29,7 @@ const GamesSection = () => {
             <div className='d-flex content justify-content-around'>
                 {
                     games.map((e)=>{
-                        return <GameCard key={e.id} focused={e.id===focusedGame.id} onClick={setFocusedGame} data={e} />
+                        return <GameCard key={e.id} focused={e.id===focusedGame.id} onClick={setFocusedGame} data={e} topPlayer={leaderboardData.filter((data)=>data.game === e.name)[0]} />
                     })
                 }
             </div>

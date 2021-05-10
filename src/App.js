@@ -18,6 +18,7 @@ import Register from './views/login-register/register.component';
 import ProtectedRouter from './views/login-register/protected';
 import { useSelector } from 'react-redux';
 import RockPaper from './views/RockPaperScissor/RockPaper';
+// import NotFound from './views/404/NotFound';
 
 function App() {
 
@@ -42,7 +43,9 @@ function App() {
             <ProtectedRouter exact path='/leaderboard'  component={Leaderboard} />
             <Route path='/contactus' exact component={Contactus} />
             <Route path='/tictactoe' exact component={()=><Tictactoe />} />
-            <Route path='*'  component={()=><h2>Not Found</h2>} />
+            <Route path='*'  component={()=><div className='w-100'> 
+            <h2 className='text-center'>404 Page Not Found</h2>
+            </div>} />
       <ToastContainer/>
         </Switch>
       </div>
