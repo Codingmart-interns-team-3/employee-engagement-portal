@@ -13,10 +13,12 @@ import ResetBall from "./Util/ResetBall";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import Snake from '../../../views/Board/Snake';
+import { useHistory } from 'react-router-dom';
 
 
 export default function Board({user}) {
   const userData = useSelector(state => state?.userdata);
+  let history = useHistory();
   const canvasRef = useRef(null);
   let bricks = [];
   
@@ -57,7 +59,7 @@ export default function Board({user}) {
       AllBroken(bricks, player, canvas, ballObj);
 
       if (player.lives === 0) {
-        alert(`Game Over! Press ok to restart`);
+        alert(`Game Over! Press ok to Reach Leaderboard`);
 
         uploadScore(player.score);
 
@@ -107,6 +109,7 @@ export default function Board({user}) {
           'game': 'breakout',
         }).then((res)=>{
           console.log(res);
+          history.push('/leaderboard');
         })
   }
 

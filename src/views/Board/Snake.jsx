@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   randomIntFromInterval,
   reverseLinkedList,
@@ -56,7 +57,7 @@ const getStartingSnakeLLValue = board => {
 
 const Snake = () => {
   const userData = useSelector(state => state?.userdata);
-  // const username = useSelector(state => state.userdata?.username)
+  let history = useHistory();
   const [score, setScore] = useState(0);
   const [board, setBoard] = useState(createBoard(BOARD_SIZE));
   const [snake, setSnake] = useState(
@@ -201,7 +202,7 @@ const Snake = () => {
   const handleGameOver = () => {
     setScore(0);
     // ALter these to restart snake game
-    alert('Game Over');
+    alert('Game Over! Press ok to go Leaderboard');
     uploadScore();
     const snakeLLStartingValue = getStartingSnakeLLValue(board);
     setSnake(new LinkedList(snakeLLStartingValue));
@@ -220,6 +221,7 @@ const Snake = () => {
         'game': 'snake',
         }).then((res)=>{
           console.log(res);
+          history.push('/leaderboard');
         })
   }
 
