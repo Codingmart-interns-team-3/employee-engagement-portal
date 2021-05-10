@@ -28,7 +28,7 @@ const Leaderboard = () => {
         {loading ? (
           <h3>Loading...</h3>
         ) : (
-          <><div className="leaderboard-content my-4 mx-auto">
+          <><div className="leaderboard-content table-responsive my-4 mx-auto">
             <table className="table text-center table-bordered table-dark h5 text-uppercase">
               <tr>
                 <th colspan="5" className='leaderboard-title'>Leaderboard Top 25</th>
@@ -63,7 +63,7 @@ const Leaderboard = () => {
           <h3>Loading...</h3>
         ) : (
           <>
-            <div className="leaderboard-content my-4 mx-auto">
+            <div className="leaderboard-content table-responsive my-4 mx-auto">
             <table className="table text-center table-bordered table-dark h5 text-uppercase">
               <tr>
                 <th colspan="5" className='leaderboard-title'>Leaderboard Of your Department</th>
